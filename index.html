@@ -23,10 +23,19 @@
 			map['qq'] = '123456';
 			map['phone'] = '654321';
 			map['Addr'] = 'BJ Road 3-5';
-			map.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
-			for(var [key, value] of map){
-				console.log(key + "is: " + value);
+//			map.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
+//			for(var [key, value] of map){
+//				console.log(key + "is: " + value);
+//			}
+			var zeroesForeverIterator = {
+				[Symbol.iterator]:function(){
+					return this;
+				},
+				next:function(){
+					return {done:false,value:0};
+				}
 			}
+			zeroesForeverIterator.next;
 		</script>
 	</body>
 </html>
