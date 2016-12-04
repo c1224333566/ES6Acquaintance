@@ -18,6 +18,15 @@
 				console.log('set:',val);
 			}
 			/*Map使用*/
+//			var map = {'qq':'123456','phone':'654321','Addr':'BJ Road 3-5'};
+			var map = {};
+			map['qq'] = '123456';
+			map['phone'] = '654321';
+			map['Addr'] = 'BJ Road 3-5';
+			map.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
+			for(var [key, value] of map){
+				console.log(key + "is: " + value);
+			}
 		</script>
 	</body>
 </html>
